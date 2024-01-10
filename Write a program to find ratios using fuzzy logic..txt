@@ -1,0 +1,20 @@
+print('Jay Parab')
+import fuzzywuzzy
+from fuzzywuzzy import fuzz
+Str_A = 'FuzzyWuzzy is a lifesaver !'
+Str_B = 'FuzzyWuzzy is a LIFE SAVER.'
+ratio = fuzz.ratio(Str_A.lower(), Str_B.lower())
+print('Similarity Score : {}'.format(ratio))
+Str_A = 'Chicago, Illinois'
+Str_B = 'Chicago'
+ratio = fuzz.partial_ratio(Str_A.lower(), Str_B.lower())
+print('partial_Ratio : {}'.format(ratio))
+Str_A = 'Gunner Willian Kline'
+Str_B = 'Kline, Gunner William'
+ratio = fuzz.token_sort_ratio(Str_A, Str_B)
+print('Token_sort_Ratio: {}'.format(ratio))
+Str_A = 'The 3000 meter steepplechasewinner, Soufiane El Bakkali'
+Str_B = 'Soufiane El Bakkali'
+ratio = fuzz.token_set_ratio(Str_A, Str_B)
+print('Token_set_Ratio: {}'.format(ratio))
+
